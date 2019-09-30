@@ -7,7 +7,7 @@ function generate_keys ($fields, $prefix) {
 			$newPrefix = isset($fields['name']) ? $prefix . '_' . $fields['name'] : $prefix;
 			$fields[$k] = generate_keys($v, $newPrefix);
 		}
-		elseif ($k === 'name' and !isset($group['key'])) {
+		elseif ($k === 'name' and !isset($fields['key'])) {
 			$fields['key'] = $prefix . '_' . $fields[$k];
 		}
 	}
