@@ -1,6 +1,9 @@
 <?php
 namespace Sleek\Acf;
 
+################################
+# Generates a key field for each
+# element in array that has a name field
 function generate_keys ($fields, $prefix) {
 	foreach ($fields as $k => $v) {
 		if (is_array($v)) {
@@ -41,16 +44,11 @@ add_filter('acf/location/rule_match/taxonomy', function ($match, $rule, $options
 
 ##############################
 # Nice flexible content titles
-# TODO
-add_filter('__acf/fields/flexible_content/layout_title', function ($title, $field, $layout, $i) {
-	# Figure out the field name
-	$nameBits = explode('_', $layout['name']);
-	$fieldName = end($nameBits);
-	$fieldName = str_replace('-', '_', $fieldName);
+add_filter('acf/fields/flexible_content/layout_title', function ($title, $field, $layout, $i) {
 	$newTitle = '<strong>' . $title . '</strong>';
 
 	# See if it has a "title" field
-	if ($t = get_sub_field($fieldName . '_title')) {
+	if ($t = get_sub_field($layout['key'] . '_title')) {
 		$newTitle .= strip_tags(": \"$t\"");
 	}
 
