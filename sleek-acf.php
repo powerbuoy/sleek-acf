@@ -18,6 +18,11 @@ function generate_keys ($fields, $prefix) {
 	return $fields;
 }
 
+#####################
+# Hide ACF from admin
+# to prevent users from adding ACF from there
+add_filter('acf/settings/show_admin', '__return_false');
+
 #########################################
 # Include more info in relationship field
 add_filter('acf/fields/relationship/result', function ($title, $post, $field, $postId) {
