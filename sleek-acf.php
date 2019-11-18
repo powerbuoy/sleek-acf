@@ -72,7 +72,6 @@ add_filter('acf/fields/flexible_content/layout_title', function ($title, $field,
 
 ###############################################
 # Collapse flexible content fields on page load
-# And hide template dropdowns if there's only one template
 add_action('acf/input/admin_head', function () {
 	?>
 	<script>
@@ -82,11 +81,6 @@ add_action('acf/input/admin_head', function () {
 				$('a[data-name="collapse-layout"]').filter(function () {
 					return !$(this).parents('.-collapsed').length && !$(this).parents('.acf-clone').length;
 				}).click();
-
-				// Hide templates if only one
-				$('div[data-name="template"]').filter(function () {
-					return $(this).find('option').length < 2;
-				}).hide();
 			});
 		})(jQuery);
 	</script>
