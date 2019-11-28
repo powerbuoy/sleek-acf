@@ -63,7 +63,7 @@ add_filter('acf/fields/flexible_content/layout_title', function ($title, $field,
 			$newTitle .= '(' . __('Hidden', 'sleek') . ')';
 		}
 		else {
-			$newTitle .= ' (' . sprintf(__('Template: "%s"', 'sleek'), __(ucfirst(str_replace(['-', '_'], ' ', basename($t, '.php')))), 'sleek') . ')';
+			$newTitle .= ' (' . sprintf(__('Template: "%s"', 'sleek'), \Sleek\Utils\convert_case($t, 'title')) . ')';
 		}
 	}
 
