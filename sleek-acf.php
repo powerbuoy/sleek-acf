@@ -21,7 +21,9 @@ function generate_keys ($fields, $prefix) {
 #####################
 # Hide ACF from admin
 # to prevent users from adding ACF from there
-add_filter('acf/settings/show_admin', '__return_false');
+if (get_theme_support('sleek-hide-acf-admin')) {
+	add_filter('acf/settings/show_admin', '__return_false');
+}
 
 #########################################
 # Include more info in relationship field
