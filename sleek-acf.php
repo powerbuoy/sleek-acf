@@ -95,9 +95,20 @@ add_filter('acf/location/rule_match/nav_menu_item_depth', function ($match, $rul
 	if ($rule['operator'] === '==') {
 		$match = ($options['nav_menu_item_depth'] == $rule['value']);
 	}
-
-	if ($rule['operator'] === '!=') {
+	elseif ($rule['operator'] === '!=') {
 		$match = ($options['nav_menu_item_depth'] != $rule['value']);
+	}
+	elseif ($rule['operator'] === '>') {
+		$match = ($options['nav_menu_item_depth'] > $rule['value']);
+	}
+	elseif ($rule['operator'] === '<') {
+		$match = ($options['nav_menu_item_depth'] < $rule['value']);
+	}
+	elseif ($rule['operator'] === '>=') {
+		$match = ($options['nav_menu_item_depth'] >= $rule['value']);
+	}
+	elseif ($rule['operator'] === '<=') {
+		$match = ($options['nav_menu_item_depth'] <= $rule['value']);
 	}
 
 	return $match;
