@@ -115,3 +115,9 @@ add_filter('acf/location/rule_match/nav_menu_item_depth', function ($match, $rul
 
 	return $match;
 }, 10, 4);
+
+####################
+# Remove group label
+add_action('admin_head', function () {
+	echo '<style>div[data-type="group"] > div.acf-label:first-child {display:none}</style>';
+});
