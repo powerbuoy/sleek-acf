@@ -91,6 +91,18 @@ add_action('acf/input/admin_head', function () {
 	<?php
 });
 
+##############################################
+# Set a reasonable max-width on image previews
+add_action('acf/input/admin_head', function () {
+	?>
+	<style>
+		.acf-image-uploader .image-wrap img {
+			max-width: 20rem;
+		}
+	</style>
+	<?php
+});
+
 ###########################################
 # Add nav_menu_item_depth location ♥️ Simon
 add_filter('acf/location/rule_match/nav_menu_item_depth', function ($match, $rule, $options, $field_group) {
