@@ -100,7 +100,7 @@ add_action('acf/input/admin_head', function () {
 add_action('acf/input/admin_head', function () {
 	?>
 	<style>
-		.acf-image-uploader .image-wrap img {
+		.post-body-content .acf-image-uploader .image-wrap img {
 			max-width: 20rem;
 		}
 	</style>
