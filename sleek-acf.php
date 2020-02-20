@@ -107,6 +107,18 @@ add_action('acf/input/admin_head', function () {
 	<?php
 });
 
+####################
+# Remove group label
+add_action('admin_head', function () {
+	?>
+	<style>
+		div.sleek-acf-group > div.acf-label:first-child {
+			display:none;
+		}
+	</style>
+	<?php
+});
+
 ###########################################
 # Add nav_menu_item_depth location ♥️ Simon
 add_filter('acf/location/rule_match/nav_menu_item_depth', function ($match, $rule, $options, $field_group) {
@@ -131,9 +143,3 @@ add_filter('acf/location/rule_match/nav_menu_item_depth', function ($match, $rul
 
 	return $match;
 }, 10, 4);
-
-####################
-# Remove group label
-add_action('admin_head', function () {
-	echo '<style>div[data-type="group"] > div.acf-label:first-child {display:none}</style>';
-});
