@@ -100,8 +100,12 @@ add_action('acf/input/admin_head', function () {
 add_action('acf/input/admin_head', function () {
 	?>
 	<style>
-		.post-body-content .acf-image-uploader .image-wrap img {
+		.acf-image-uploader .image-wrap img {
 			max-width: 20rem;
+		}
+
+		#side-sortables .acf-image-uploader .image-wrap img {
+			max-width: 100%;
 		}
 	</style>
 	<?php
