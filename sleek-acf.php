@@ -116,7 +116,7 @@ add_action('acf/input/admin_head', function () {
 add_action('admin_head', function () {
 	?>
 	<style>
-		div.sleek-acf-group > div.acf-label:first-child {
+		div.sleek-module-group > div.acf-label:first-child {
 			display:none;
 		}
 	</style>
@@ -154,7 +154,7 @@ add_filter('acf/location/rule_match/nav_menu_item_depth', function ($match, $rul
 
 ##############
 # Redirect URL
-# TODO: Move to sleek-acf under theme-support sleek-acf-redirect-url
+# TODO: Convert to custom acf-field-type "redirect_url" (so name can be anything)
 add_action('after_setup_theme', function () {
 	if (get_theme_support('sleek-acf-redirect-url')) {
 		# Make sure the_permalink() points to the redirect URL
