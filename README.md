@@ -20,7 +20,7 @@ N/A
 
 ### `Sleek\Acf\generate_keys($fields, $prefix)`
 
-Generate a `key` property next to every `name` property in `$fields`. The `key` will be in the form of `$prefix_$name`.
+Generate a `key` property next to every `name` property in `$fields`. The `key` will be in the form of `{$prefix}_{$name}`.
 
 ## Classes
 
