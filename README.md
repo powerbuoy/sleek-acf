@@ -1,4 +1,10 @@
-# Sleek ACF
+# [Sleek ACF](https://github.com/powerbuoy/sleek-acf/)
+
+[![Packagist](https://img.shields.io/packagist/vpre/powerbuoy/sleek-acf.svg?style=flat-square)](https://packagist.org/packages/powerbuoy/sleek-acf)
+[![GitHub license](https://img.shields.io/github/license/powerbuoy/sleek-acf.svg?style=flat-square)](https://github.com/powerbuoy/sleek-acf/blob/master/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/powerbuoy/sleek-acf.svg?style=flat-square)](https://github.com/powerbuoy/sleek-acf/issues)
+[![GitHub forks](https://img.shields.io/github/forks/powerbuoy/sleek-acf.svg?style=flat-square)](https://github.com/powerbuoy/sleek-acf/network)
+[![GitHub stars](https://img.shields.io/github/stars/powerbuoy/sleek-acf.svg?style=flat-square)](https://github.com/powerbuoy/sleek-acf/stargazers)
 
 Improves ACF in a number of ways like nicer flexible content titles, collapsed flexible content layouts, better looking relationship field and more.
 

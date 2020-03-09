@@ -1,5 +1,6 @@
 {
     "name": "powerbuoy/sleek-acf",
+    "description": "Improves ACF in a number of ways like nicer flexible content titles, collapsed flexible content layouts, better looking relationship field and more.",
     "license": "GPL-2.0-or-later",
     "authors": [
         {
