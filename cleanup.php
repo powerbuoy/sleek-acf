@@ -41,7 +41,11 @@ add_filter('acf/fields/flexible_content/layout_title', function ($title, $field,
 
 	# See if it has a "title" field
 	if ($t = get_sub_field($layout['key'] . '_title')) {
-		$newTitle .= strip_tags(": \"$t\"");
+		$newTitle .= strip_tags(": $t");
+	}
+	# Or a global_module field
+	elseif ($t = get_sub_field($layout['key'] . '_global_module')) {
+		$newTitle .= ': ' . get_the_title($t);
 	}
 
 	# Or template
@@ -50,7 +54,7 @@ add_filter('acf/fields/flexible_content/layout_title', function ($title, $field,
 			$newTitle .= '(' . __('Hidden', 'sleek') . ')';
 		}
 		else {
-			$newTitle .= ' (' . sprintf(__('Template: "%s"', 'sleek'), \Sleek\Utils\convert_case($t, 'title')) . ')';
+			$newTitle .= ' (' . \Sleek\Utils\convert_case($t, 'title') . ')';
 		}
 	}
 
