@@ -50,11 +50,16 @@ add_filter('acf/fields/flexible_content/layout_title', function ($title, $field,
 
 	# Or template
 	if ($t = get_sub_field($layout['key'] . '_template')) {
+		$object = get_sub_field_object($layout['key'] . '_template');
+		$templateLabel = $object['choices'][$t];
+		$templateLabel = preg_replace('/<img.*?>/', '', $templateLabel);
+		$templateLabel = preg_replace('/<small.*?>.*?<\/small>/', '', $templateLabel);
+
 		if ($t === 'SLEEK_ACF_HIDDEN_TEMPLATE') {
 			$newTitle .= '(' . __('Hidden', 'sleek') . ')';
 		}
 		else {
-			$newTitle .= ' (' . \Sleek\Utils\convert_case($t, 'title') . ')';
+			$newTitle .= ' (' . $templateLabel . ')';
 		}
 	}
 
