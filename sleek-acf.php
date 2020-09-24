@@ -2,8 +2,8 @@
 namespace Sleek\Acf;
 
 require_once __DIR__ . '/cleanup.php';
+require_once __DIR__ . '/enhancements.php';
 require_once __DIR__ . '/fields.php';
-require_once __DIR__ . '/locations.php';
 require_once __DIR__ . '/polylang.php';
 
 ################################
