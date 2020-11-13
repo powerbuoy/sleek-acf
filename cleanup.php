@@ -88,9 +88,9 @@ add_action('acf/input/admin_head', function () {
 add_action('acf/input/admin_head', function () {
 	?>
 	<style>
-	/*	.acf-image-uploader .image-wrap img {
-			max-width: 20rem;
-		} */
+		.acf-image-uploader .image-wrap img {
+			max-width: min(100%, 20rem);
+		}
 
 		#side-sortables .acf-image-uploader .image-wrap img {
 			max-width: 100%;
