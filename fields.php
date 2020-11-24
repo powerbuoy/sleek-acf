@@ -28,7 +28,7 @@ add_action('after_setup_theme', function () {
 				$redirectUrl = get_field('redirect_url', $post->ID);
 
 				if (!empty($redirectUrl)) {
-					wp_redirect($redirectUrl);
+					wp_redirect($redirectUrl, 301);
 				}
 			}
 		}, 10, 1);
