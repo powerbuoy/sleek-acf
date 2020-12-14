@@ -44,7 +44,7 @@ add_filter('acf/format_value/type=textarea', function($value, $post_id, $field) 
 ################################
 # Simple WYSIWYG toolbar ♥️ Simon
 add_filter('acf/fields/wysiwyg/toolbars' , function ($toolbars) {
-	$toolbars['Simple'][1] = ['bold', 'italic', 'underline', 'link', 'blockquote', 'undo', 'redo'];
+	$toolbars['Simple'][1] = ['bold', 'italic', 'underline', 'link', 'undo', 'redo'];
 
 	return $toolbars;
 });
