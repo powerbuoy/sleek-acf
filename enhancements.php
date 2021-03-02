@@ -60,5 +60,5 @@ add_filter('acf/fields/relationship/result', function ($title, $post, $field, $p
 	$excerpt = get_the_excerpt($post->ID);
 	$image = has_post_thumbnail($post->ID) ? get_the_post_thumbnail($post->ID, 'post-thumbnail', ['style' => 'width: auto; height: 34px; float: left; vertical-align: middle; margin-right: 8px;']) : '';
 
-	return "<strong>$image$postTitle</strong> ($postTypeLabel)<br><small style=\"display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;\">$excerpt</small>";
+	return "<div style=\"overflow: hidden\"><strong>$image$postTitle</strong> ($postTypeLabel)<br><small style=\"display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;\">$excerpt</small></div>";
 }, 10, 4);
