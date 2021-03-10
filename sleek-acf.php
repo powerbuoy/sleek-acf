@@ -10,7 +10,18 @@ require_once __DIR__ . '/polylang.php';
 # Generates a key field for each
 # element in array that has a name field
 function generate_keys ($fields, $prefix) {
-	return \Sleek\Utils\str_replace_in_array('{acf_key}', $prefix, generate_keys_recursive($fields, $prefix));
+	$key = 'sleek_generate_keys_' . md5($fields . $prefix);
+
+	if ($val = get_transient($key)) {
+		return $val;
+	}
+	else {
+		$val = \Sleek\Utils\str_replace_in_array('{acf_key}', $prefix, generate_keys_recursive($fields, $prefix));
+
+		set_transient($key, $val);
+
+		return $val;
+	}
 }
 
 ###################################
