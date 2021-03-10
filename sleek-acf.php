@@ -10,7 +10,7 @@ require_once __DIR__ . '/polylang.php';
 # Generates a key field for each
 # element in array that has a name field
 function generate_keys ($fields, $prefix) {
-	$key = 'sleek_generate_keys_' . md5($fields . $prefix);
+	$key = 'sleek_generate_keys_' . md5(json_encode($fields) . $prefix);
 
 	if ($val = get_transient($key)) {
 		return $val;
