@@ -41,13 +41,7 @@ add_filter('acf/fields/flexible_content/layout_title', function ($title, $field,
 		$templateLabel = $object['choices'][$t];
 		$templateLabel = preg_replace('/<img.*?>/', '', $templateLabel);
 		$templateLabel = preg_replace('/<small.*?>.*?<\/small>/', '', $templateLabel);
-
-		if ($t === 'SLEEK_ACF_HIDDEN_TEMPLATE') {
-			$newTitle .= '(' . __('Hidden', 'sleek') . ')';
-		}
-		else {
-			$newTitle .= ' (' . $templateLabel . ')';
-		}
+		$newTitle .= ' (' . $templateLabel . ')';
 	}
 
 	return $newTitle;
