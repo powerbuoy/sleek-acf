@@ -80,13 +80,21 @@ add_action('acf/input/admin_head', function () {
 	<?php
 });
 
-####################
-# Remove group label
+########################
+# Remove group label etc
 add_action('admin_head', function () {
 	?>
 	<style>
+		div.sleek-module-group {
+			padding: 0 !important;
+		}
+
 		div.sleek-module-group > div.acf-label:first-child {
-			display:none;
+			display: none !important;
+		}
+
+		div.sleek-module-group .acf-fields.-border {
+			border: 0 !important;
 		}
 	</style>
 	<?php
