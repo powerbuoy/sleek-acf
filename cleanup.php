@@ -26,8 +26,12 @@ add_filter('acf/location/rule_match/taxonomy', function ($match, $rule, $options
 add_filter('acf/fields/flexible_content/layout_title', function ($title, $field, $layout, $i) {
 	$newTitle = '<strong>' . $title . '</strong>';
 
+	# See if it has a module_header.title field
+	if ($h = get_sub_field($layout['key']. '_module_header') and !empty($h['title'])) {
+		$newTitle .= strip_tags(": {$h['title']}");
+	}
 	# See if it has a "title" field
-	if ($t = get_sub_field($layout['key'] . '_title')) {
+	elseif ($t = get_sub_field($layout['key'] . '_title')) {
 		$newTitle .= strip_tags(": $t");
 	}
 	# Or a global_module field
