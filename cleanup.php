@@ -97,7 +97,7 @@ add_action('admin_head', function () {
 			display: none !important;
 		}
 
-		div.sleek-module-group .acf-fields.-border {
+		div.sleek-module-group > .acf-input > .acf-fields.-border {
 			border: 0 !important;
 		}
 	</style>
